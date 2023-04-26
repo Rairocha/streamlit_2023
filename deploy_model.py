@@ -18,11 +18,12 @@ def main():
     # Main page #
     #############   
     
-    options = ['Home','EDA','Stop']
+    options = ['Introdução','EDA','Stop']
     choice = st.sidebar.selectbox("Menu",options, key = '1')
     
-    if ( choice == 'Home' ):            
-      st.title("Welcome to the Czech bank, where your dreams can come true!!")
+    if ( choice == 'Introdução' ):
+      st.multiselect('Excolha o gato preferido',['Atum','Pingo','Kali','Gatinha'])
+      st.title("Análise do banco!")
       st.image('images/istockphoto-1288703928-170667a.jpg')
       pass
       
