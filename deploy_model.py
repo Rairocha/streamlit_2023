@@ -22,11 +22,10 @@ def main():
     choice = st.sidebar.selectbox("Menu",options, key = '1')
     
     if ( choice == 'Introdução' ):
-      st.multiselect('Excolha o gato preferido',['Atum','Pingo','Kali','Gatinha'])
       st.title("Análise do banco!")
       st.image('images/istockphoto-1288703928-170667a.jpg')
       pass
-      
+    
     elif ( choice == 'EDA' ):
       eda()
       pass

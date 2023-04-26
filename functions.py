@@ -15,11 +15,18 @@ def get_AB_loans(engine):
 
 def get_loans(engine):
     #import pandas as pd
-    query = '''select l.loan_id, l.amount, l.duration, l.payments, l.status, d.A2 as District, d.A3 as Region from bank.loan as l
+    query = '''select l.loan_id, 
+        l.amount,
+        l.duration,
+        l.payments,
+        l.status,
+        district.A2 as District,
+        district.A3 as Region 
+    from bank.loan as l
     join bank.account as a
     on l.account_id = a.account_id
-    join bank.district as d
-    on a.district_id = d.A1;'''
+    join bank.district 
+    on a.district_id = district.A1;'''
     #engine = engine.get_engine(password)
     data = pd.read_sql(text(query), engine)
     return data

@@ -25,13 +25,13 @@ def eda():
     password = st.text_input("Restricted access, please enter your password: ", type="password")
     if ( password ):
         data = get_loans(get_engine(password))
-        
+        st.write(data.head())
         fig1, ax1 = plt.subplots(figsize=(20,10))
         sns.countplot(data = data, x='Region', hue='status',ax= ax1)
         ax1.set_title("Number of loans of in each status by Region")
         st.pyplot(fig1)
         
         data = get_debt(get_engine(password))
-        
+        st.write(data.head())
         fig2 = px.bar(data, y='Region', x='Debt', color = 'Status')
         st.plotly_chart(fig2)
